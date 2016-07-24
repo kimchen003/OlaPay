@@ -1,0 +1,1034 @@
+/*
+*  @desc 整合全部样式
+*/
+/*
+*  @desc 动画通用库
+*/
+/*
+*  @desc 初始化样式
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+img {
+  moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body {
+  line-height: 1;
+}
+img {
+  vertical-align: top;
+}
+:focus {
+  outline: 1;
+}
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
+/*
+*  @desc 模块通用样式
+*/
+body {
+  font-family: "微软雅黑";
+}
+.hide {
+  display: none;
+}
+.fullScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.imgCenterBox {
+  width: 100%;
+  text-align: center;
+}
+.absoulteControl {
+  position: absolute;
+  left: 0;
+}
+.crossScreenTips {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  z-index: 99999;
+}
+.crossScreenMain {
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+.crossScreenPhone {
+  padding-bottom: 20px;
+}
+.crossScreenPhone span {
+  display: inline-block;
+  font-family: "iconfont";
+  font-size: 12px;
+}
+.crossScreenPhone .tipsIphone {
+  font-size: 40px;
+  -webkit-animation: crossScreenTips 2s Infinite ease-in-out;
+  -moz-animation: crossScreenTips 2s Infinite ease-in-out;
+  -ms-animation: crossScreenTips 2s Infinite ease-in-out;
+  animation: crossScreenTips 2s Infinite ease-in-out;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+}
+@-webkit-keyframes crossScreenTips {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@-moz-keyframes crossScreenTips {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@-o-keyframes crossScreenTips {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@-ms-keyframes crossScreenTips {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@keyframes crossScreenTips {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+.verticalScreenTips {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  z-index: 99999;
+}
+.verticalScreenMain {
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+.verticalScreenPhone {
+  padding-bottom: 20px;
+}
+.verticalScreenPhone span {
+  display: inline-block;
+  font-family: "iconfont";
+  font-size: 12px;
+}
+.verticalScreenPhone .tipsIphone {
+  font-size: 40px;
+  -webkit-animation: verticalScreenPhone 2s Infinite ease-in-out;
+  -moz-animation: verticalScreenPhone 2s Infinite ease-in-out;
+  -ms-animation: verticalScreenPhone 2s Infinite ease-in-out;
+  animation: verticalScreenPhone 2s Infinite ease-in-out;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+}
+@-webkit-keyframes verticalScreenPhone {
+  0% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-moz-keyframes verticalScreenPhone {
+  0% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-o-keyframes verticalScreenPhone {
+  0% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-ms-keyframes verticalScreenPhone {
+  0% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes verticalScreenPhone {
+  0% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+/*
+*  @desc 加载中蒙蔽
+*/
+.loading,
+.loading_layer_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+.loading {
+  background: #81c0ea;
+}
+.cell {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -32px;
+  margin-top: -44px;
+}
+.loading header {
+  padding: 24px 0;
+  background: #fff;
+}
+.logo-center {
+  color: #fff;
+}
+.timer-loader:not(:required) {
+  border: 6px solid #e9ab34;
+}
+.timer-loader:not(:required)::after {
+  background: #ffec30;
+}
+.timer-loader:not(:required)::before {
+  background: #ffec30;
+}
+.loading_ico {
+  width: 170px;
+}
+.icoMask {
+  width: 0%;
+  overflow: hidden;
+  float: left;
+}
+.icoWin {
+  width: 170px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  background: url(../image/loading/cloudbg.png) no-repeat;
+  background-size: 170px auto;
+}
+.cell {
+  width: 64px;
+  text-align: center;
+}
+.loadWrap {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -49%;
+}
+.loadWords {
+  color: #fff;
+  font-size: 14px;
+  padding-top: 18px;
+  text-align: center;
+}
+.loading_word {
+  width: 90px;
+}
+.loadWords p {
+  text-align: center;
+  padding-top: 20px;
+}
+/*
+*  @desc 字体图标
+*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1469206027_4732888.eot');
+  /* IE9*/
+  src: url('//at.alicdn.com/t/font_1469206027_4732888.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/font_1469206027_4732888.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/font_1469206027_4732888.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/font_1469206027_4732888.svg#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: 'iconfont';
+}
+/*
+*  @desc 引导页(模块)
+*/
+.guideBlueArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: url(../image/guide/bg.jpg) no-repeat center center;
+  background-size: 100% 100%;
+}
+.guideWhiteArea {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 20%;
+}
+.guideAd {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.guideLogo {
+  top: 10%;
+}
+.guideLogo img {
+  width: 25%;
+}
+.guideTitle {
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+.guideTitle img {
+  width: 65.78%;
+}
+.guideBtn {
+  bottom: 8%;
+}
+.guideBtn img {
+  width: 38.6%;
+}
+/* iphone4等小屏幕手机  */
+@media (max-height: 500px) {
+  .guideBlueArea {
+    height: 85%;
+  }
+  .guideWhiteArea {
+    height: 15%;
+  }
+  .guideLogo {
+    top: 8%;
+  }
+  .guideBtn {
+    bottom: 6%;
+  }
+}
+/*
+*  @desc 滑动开始页(模块)
+*/
+#slideStartPage {
+  overflow: hidden;
+  background: #81c0ea;
+}
+.slideGrass {
+  height: 62%;
+  width: 100%;
+  bottom: 2%;
+}
+.slideGrassBg {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.slideStartBox {
+  bottom: 20%;
+  height: 14%;
+  left: -10%;
+}
+.slideTrain {
+  opacity: 0.3;
+  height: 100%;
+}
+.trainActive {
+  position: absolute;
+  left: -60%;
+  height: 100%;
+  bottom: 0%;
+  opacity: 1;
+}
+.slideLogo {
+  position: absolute;
+  height: 10%;
+  left: 1%;
+  top: 2%;
+}
+.slideCloud {
+  position: absolute;
+  height: 13.12%;
+  right: 3%;
+  top: 7%;
+}
+.slideTitle {
+  height: 50%;
+  top: 2%;
+}
+.slideTitle img {
+  height: 100%;
+}
+.slideSubtitle {
+  height: 10%;
+  top: 56%;
+}
+.slideSubtitle img {
+  height: 100%;
+}
+.slideTips {
+  height: 7%;
+  top: 70%;
+}
+.slideTips img {
+  height: 100%;
+}
+/* iphone4等小屏幕手机  */
+@media (max-height: 500px) {
+  .slideTitle {
+    height: 43%;
+    top: 6%;
+  }
+}
+/*
+*  @desc 弹框(模块)
+*/
+.alertType01,
+.alertType02 {
+  background: rgba(0, 0, 0, 0.8);
+}
+.alertType01Main,
+.alertType02Main {
+  height: 214px;
+  left: 50%;
+  top: 50%;
+  display: inline-block;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.slideSucc {
+  background: none;
+}
+.slideSucc .alertType01Main {
+  -webkit-transform: translate(-50%, -64%);
+  -moz-transform: translate(-50%, -64%);
+  -ms-transform: translate(-50%, -64%);
+  transform: translate(-50%, -64%);
+}
+.alertType01Main .alertType01Bg,
+.alertType02Main .alertType02Bg {
+  height: 100%;
+}
+.alertType01Btn,
+.alertType02Btn {
+  bottom: 14%;
+  left: 33%;
+  width: 35%;
+  height: 18%;
+  cursor: pointer;
+}
+.tryAgain .alertType01Btn {
+  bottom: 11%;
+  left: 26%;
+  width: 49%;
+}
+.chances {
+  position: absolute;
+  color: #dcdddd;
+  top: 59%;
+  left: 42%;
+  width: 4%;
+  height: 8%;
+  text-align: center;
+  font-size: 13px;
+}
+.alertType02Btn {
+  bottom: 2%;
+}
+.userInfo .alertType02Main {
+  height: 212px;
+}
+.userInfo .alertType02Btn {
+  bottom: 5%;
+  height: 15%;
+}
+.u_name,
+.u_tel {
+  position: absolute;
+  top: 118px;
+  left: 101px;
+  border: none;
+  padding: 0;
+  outline: none;
+  width: 109px;
+  background: none;
+}
+.u_tel {
+  top: 143px;
+}
+.logoAmount {
+  position: absolute;
+  color: #dcdddd;
+  top: 46%;
+  left: 37.8%;
+  width: 4%;
+  height: 8%;
+  text-align: center;
+  font-size: 13px;
+}
+/*
+*  @desc 游戏一(模块)
+*/
+.gameOne {
+  overflow: hidden;
+  background: #81c0eb;
+}
+.gameOneMain {
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.gameOneBg {
+  height: 100%;
+}
+.gameOneTips_on {
+  perspective: 800px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.gameOnetag {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  transition: transform 0.5s;
+}
+.gameOnetag {
+  position: absolute;
+  height: 15.6%;
+  width: 6.58%;
+  top: 50%;
+  left: 50%;
+}
+.tag_off,
+.tag_on {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.tag_off {
+  backface-visibility: hidden;
+}
+.tag_on {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.gameOneTagSite01 {
+  top: 58%;
+  left: 13%;
+}
+.gameOneTagSite02 {
+  top: 68%;
+  left: 21%;
+}
+.gameOneTagSite03 {
+  top: 68%;
+  left: 28%;
+}
+.gameOneTagSite04 {
+  top: 68%;
+  left: 43%;
+}
+.gameOneTagSite05 {
+  top: 58%;
+  left: 50%;
+}
+.gameOneTagSite06 {
+  top: 50%;
+  left: 44%;
+}
+.gameOneTagSite07 {
+  top: 46%;
+  left: 56%;
+}
+.gameOneTagSite08 {
+  top: 46%;
+  left: 67%;
+}
+.gameOneBank {
+  position: absolute;
+  height: 13.75%;
+  top: 50%;
+  left: 50%;
+  display: none;
+}
+.gameOneBankSite01 {
+  top: 70%;
+  left: 5%;
+}
+.gameOneBankSite02 {
+  top: 82%;
+  left: 16%;
+}
+.gameOneBankSite03 {
+  top: 82%;
+  left: 26%;
+}
+.gameOneBankSite04 {
+  top: 82%;
+  left: 40%;
+}
+.gameOneBankSite05 {
+  top: 71%;
+  left: 50%;
+}
+.gameOneBankSite06 {
+  top: 57%;
+  left: 33%;
+}
+.gameOneBankSite07 {
+  top: 59%;
+  left: 54%;
+}
+.gameOneBankSite08 {
+  top: 59%;
+  left: 65%;
+}
+.gameOnetag.turnOn {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.turn00 {
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -ms-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.turn01 {
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -ms-transition-delay: 1s;
+  transition-delay: 1s;
+}
+.turn02 {
+  -webkit-transition-delay: 1.5s;
+  -moz-transition-delay: 1.5s;
+  -ms-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+}
+.turn03 {
+  -webkit-transition-delay: 2s;
+  -moz-transition-delay: 2s;
+  -ms-transition-delay: 2s;
+  transition-delay: 2s;
+}
+.turn04 {
+  -webkit-transition-delay: 2.5s;
+  -moz-transition-delay: 2.5s;
+  -ms-transition-delay: 2.5s;
+  transition-delay: 2.5s;
+}
+.turn05 {
+  -webkit-transition-delay: 3s;
+  -moz-transition-delay: 3s;
+  -ms-transition-delay: 3s;
+  transition-delay: 3s;
+}
+.turn06 {
+  -webkit-transition-delay: 3.5s;
+  -moz-transition-delay: 3.5s;
+  -ms-transition-delay: 3.5s;
+  transition-delay: 3.5s;
+}
+.turn07 {
+  -webkit-transition-delay: 4s;
+  -moz-transition-delay: 4s;
+  -ms-transition-delay: 4s;
+  transition-delay: 4s;
+}
+.turn08 {
+  -webkit-transition-delay: 4.5s;
+  -moz-transition-delay: 4.5s;
+  -ms-transition-delay: 4.5s;
+  transition-delay: 4.5s;
+}
+/*
+*  @desc 游戏二(模块)
+*/
+.gameTwo {
+  overflow: hidden;
+  background: #81c0eb;
+}
+.gameTwoMain {
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.gameTwoBg {
+  height: 100%;
+}
+.gameTwoTips_on {
+  perspective: 800px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.gameTwoLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+}
+.gameTwoLogo img {
+  height: 100%;
+}
+.logo_1 {
+  top: 34.6%;
+  left: 11.8%;
+  height: 4.4%;
+}
+.logo_2 {
+  top: 54%;
+  left: 11.1%;
+  height: 2.5%;
+}
+.logo_3 {
+  top: 28.6%;
+  left: 38.1%;
+  height: 5.6%;
+}
+.logo_4 {
+  top: 51.6%;
+  left: 43.4%;
+  height: 4%;
+}
+.logo_5 {
+  top: 16.4%;
+  left: 61.3%;
+  height: 4%;
+}
+.logo_6 {
+  top: 60.8%;
+  left: 56.3%;
+  height: 4.5%;
+}
+.logo_7 {
+  top: 42.8%;
+  left: 68.3%;
+  height: 2.5%;
+}
+.logo_8 {
+  top: 53.3%;
+  left: 75.4%;
+  height: 2.8%;
+}
+.logo_9 {
+  top: 82.3%;
+  left: 86.8%;
+  height: 3.8%;
+}
+.gameTwoLogo.on:after {
+  content: "\e600";
+  font-family: "iconfont";
+  display: block;
+  position: absolute;
+  color: red;
+  font-size: 24px;
+  top: 0;
+  left: 0;
+}
+.logo_8.on:after,
+.logo_2.on:after,
+.logo_7.on:after {
+  top: -10px;
+}
+.logo_4.on:after {
+  top: -4px;
+}

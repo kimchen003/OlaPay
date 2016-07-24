@@ -1,0 +1,78 @@
+/*
+*  @desc 加载中蒙蔽
+*/
+
+.loading,.loading_layer_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.loading {
+    background: #81c0ea;
+}
+.cell {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -32px;
+    margin-top:-44px;
+}
+.loading header {
+    padding: 24px 0;
+    background: #fff;
+}
+.logo-center {
+    color: #fff;
+}
+.timer-loader:not(:required) {
+    border: 6px solid #e9ab34;
+}
+.timer-loader:not(:required)::after {
+    background: #ffec30;
+}
+.timer-loader:not(:required)::before {
+    background: #ffec30;
+}
+.loading_ico {
+    width:170px;
+}
+.icoMask {
+    width:0%;
+    overflow:hidden;
+    float: left;
+}
+.icoWin {
+    width:170px;
+    display:block;
+    margin:0 auto;
+    overflow:hidden;
+    background:url(../image/loading/cloudbg.png) no-repeat;
+    background-size: 170px auto;
+}
+.cell {
+    width: 64px;
+    text-align: center;
+}
+.loadWrap {
+    width:100%;
+    position:absolute;
+    top: 50%;
+    margin-top: -49%;
+}
+.loadWords {
+    color:#fff;
+    font-size: 14px;
+    padding-top: 18px;
+    text-align: center;
+}
+.loading_word {
+    width: 90px;
+}
+.loadWords p {
+    text-align: center;
+    padding-top:20px;
+}

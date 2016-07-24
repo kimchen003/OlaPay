@@ -1,0 +1,64 @@
+/*
+*  @desc 引导页(模块)
+*/
+
+.guideBlueArea {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 80%;
+    background:url(../image/guide/bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+.guideWhiteArea {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background: #fff;
+    width: 100%;
+    height: 20%;
+}
+.guideAd {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: 40%;
+    .translate(-50%,-50%);
+}
+.guideLogo {
+    top: 10%;
+}
+.guideLogo img {
+    width: 25%;
+}
+.guideTitle {
+    top: 50%;
+    .translate(0%,-50%);
+}
+.guideTitle img{
+    width: 65.78%;
+}
+.guideBtn {
+    bottom: 8%;
+}
+.guideBtn img{
+    width: 38.6%;
+}
+
+/* iphone4等小屏幕手机  */
+@media (max-height: 500px) {
+  .guideBlueArea {
+    height:85%;
+  }
+  .guideWhiteArea {
+    height:15%;
+  }
+  .guideLogo {
+    top: 8%;
+  }
+  .guideBtn {
+    bottom: 6%;
+  }
+}
+

@@ -1,0 +1,157 @@
+/*
+*  @desc 游戏一(模块)
+*/
+.gameOne {
+    overflow: hidden;
+    background: #81c0eb;
+}
+.gameOneMain {
+    height: 100%;
+    left:50%;
+    .translate(-50%,0%);
+}
+.gameOneBg {
+    height: 100%;
+}
+.gameOneTips_on {
+    perspective: 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+//tag位置
+.gameOnetag {
+    .transform-style( preserve-3d);
+    .transition( transform 0.5s);
+}
+.gameOnetag {
+    position: absolute;
+    height: 15.6%;
+    width: 6.58%;
+    top: 50%;
+    left: 50%;
+}
+.tag_off,.tag_on {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.tag_off {
+    backface-visibility: hidden;
+}
+.tag_on {
+    .transform(rotateY( 180deg ));
+     backface-visibility: hidden;
+}
+.gameOneTagSite01  {
+    top: 58%;
+    left: 13%;
+}
+.gameOneTagSite02  {
+    top: 68%;
+    left: 21%;
+}
+.gameOneTagSite03  {
+    top: 68%;
+    left: 28%;
+}
+.gameOneTagSite04  {
+    top: 68%;
+    left: 43%;
+}
+.gameOneTagSite05  {
+    top: 58%;
+    left: 50%;
+}
+.gameOneTagSite06  {
+    top: 50%;
+    left: 44%
+}
+.gameOneTagSite07  {
+    top: 46%;
+    left: 56%;
+}
+.gameOneTagSite08  {
+    top: 46%;
+    left: 67%;
+}
+
+//bank位置
+.gameOneBank {
+    position: absolute;
+    height: 13.75%;
+    top: 50%;
+    left: 50%;
+    display: none;
+}
+.gameOneBankSite01 {
+    top: 70%;
+    left: 5%;
+}
+.gameOneBankSite02 {
+    top: 82%;
+    left: 16%;
+}
+.gameOneBankSite03 {
+    top: 82%;
+    left: 26%;
+}
+.gameOneBankSite04 {
+    top: 82%;
+    left: 40%;
+}
+.gameOneBankSite05 {
+    top: 71%;
+    left: 50%;
+}
+.gameOneBankSite06 {
+    top: 57%;
+    left: 33%;
+}
+.gameOneBankSite07{
+    top: 59%;
+    left: 54%;
+}
+.gameOneBankSite08 {
+    top: 59%;
+    left: 65%;
+}
+
+//动画
+.gameOnetag.turnOn {
+    .transform(rotateY( 180deg ));
+}
+
+.turn00 {
+    .transition-delay(.5s);
+}
+.turn01 {
+    .transition-delay(1s);
+}
+.turn02 {
+    .transition-delay(1.5s);
+}
+.turn03 {
+    .transition-delay(2s);
+}
+.turn04 {
+    .transition-delay(2.5s);
+}
+.turn05 {
+    .transition-delay(3s);
+}
+.turn06 {
+    .transition-delay(3.5s);
+}
+.turn07 {
+    .transition-delay(4s);
+}
+.turn08 {
+    .transition-delay(4.5s);
+}
+

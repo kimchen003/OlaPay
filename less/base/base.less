@@ -1,0 +1,100 @@
+/*
+*  @desc 模块通用样式
+*/
+body {
+    font-family:"微软雅黑";
+}
+.hide {
+    display: none;
+}
+.fullScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.imgCenterBox {
+    width: 100%;
+    text-align: center;
+}
+.absoulteControl {
+    position: absolute;
+    left:0;
+}
+
+//横屏提示
+.crossScreenTips {
+    background:#000;
+    color:#fff;
+    text-align: center;
+    font-size: 16px;
+    z-index: 99999;
+}
+.crossScreenMain {
+    top: 50%;
+    width: 100%;
+    .translate(0%,-50%);
+}
+.crossScreenPhone {
+    padding-bottom: 20px;
+}
+.crossScreenPhone span {
+    display: inline-block;
+    font-family: "iconfont";
+    font-size: 12px;
+}
+.crossScreenPhone .tipsIphone {
+    font-size: 40px;
+    .animation(crossScreenTips 2s Infinite ease-in-out);
+    .transform-origin(center center);
+    .keyframes(crossScreenTips);
+    .-frames(@-...){
+        0% {
+            .rotate(0)
+        }
+
+        40%,100% {
+            .rotate(90deg)
+        }
+    }
+
+}
+
+//竖屏提示
+.verticalScreenTips {
+    background:#000;
+    color:#fff;
+    text-align: center;
+    font-size: 16px;
+    z-index: 99999;
+}
+.verticalScreenMain {
+    top: 50%;
+    width: 100%;
+    .translate(0%,-50%);
+}
+.verticalScreenPhone {
+    padding-bottom: 20px;
+}
+.verticalScreenPhone span {
+    display: inline-block;
+    font-family: "iconfont";
+    font-size: 12px;
+}
+.verticalScreenPhone .tipsIphone {
+    font-size: 40px;
+    .animation(verticalScreenPhone 2s Infinite ease-in-out);
+    .transform-origin(center center);
+    .keyframes(verticalScreenPhone);
+    .-frames(@-...){
+        0% {
+            .rotate(90deg)
+        }
+
+        40%,100% {
+            .rotate(0deg)
+        }
+    }
+
+}

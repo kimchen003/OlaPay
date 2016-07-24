@@ -1,0 +1,20 @@
+{
+  "name": "olapay",
+  "version": "1.0.0",
+  "description": "## 安装Node.js (全局) 1.[安装Node.js](https://nodejs.org/en/) 2.安装成功后打开终端(如cmd)输入`node -v`有返回代表安装成功",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "async": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "run-sequence": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kim",
+  "license": "ISC"
+}
