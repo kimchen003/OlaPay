@@ -2,12 +2,7 @@
 
 use lib\Config;
 
-// DB Config
-Config::write('db.host', 'localhost');
-Config::write('db.port', '');
-Config::write('db.basename', 'events');
-Config::write('db.user', 'root');
-Config::write('db.password', '');
-
-// Project Config
-Config::write('path', 'http://test.oaly.local');
+define('DB_HOST', '127.0.0.1');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'db_olapay');

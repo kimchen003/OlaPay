@@ -14,11 +14,13 @@
         "php":">=5.3.0",
         "slim/slim":"2.*",
         "slim/views":"0.1.*",
-        "twig/twig":"1.*"
+        "twig/twig":"1.*",
+        "sergeytsalkov/meekrodb": "*"
     },
     "autoload":{
         "psr-0":{
             "": ""
-        }
+        },
+        "files": ["helper/functions.php"]
     }
 }
