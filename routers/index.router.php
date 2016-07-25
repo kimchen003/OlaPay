@@ -1,14 +1,9 @@
 <?php
-
 // GET index route
 $app->get('/', function () use ($app) {
-
-    $oStuff = new models\Stuff();
-    $hello = $oStuff->setStuff();
-
-    $app->render('index.html', array('hello' => $hello));
+    $app->render('index.html');
 });
-$app->get('/todo', function () use ($app) {
+$app->post('/todo', function () use ($app) {
 
     DB::$host = DB_HOST;
     DB::$user = DB_USER;
@@ -18,10 +13,8 @@ $app->get('/todo', function () use ($app) {
     //处理数据
     $result = array('error' => 0, 'message' => '');
     //var_dump($app->request->params(''));
-    $phone = '15000650761';
-    $app->request->params('phone');
-    $username = 'sad';
-    $app->request->params('username');
+    $phone = $app->request->params('phone');
+    $username = $app->request->params('username');
     //检测手机号
     if (empty($phone)) {
         $result['error'] = __LINE__;
@@ -33,7 +26,7 @@ $app->get('/todo', function () use ($app) {
     $res = DB::queryFirstRow("select * from `userinfo` where `phone` = %s", $phone);
     if ($res) {
         $result['error'] = __LINE__;
-        $result['message'] = '改手机已经存在~';
+        $result['message'] = '该手机已经存在~';
     }
     if ($result['error']) {
         echo json_result($result);
