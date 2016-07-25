@@ -53,6 +53,8 @@ class ComposerStaticInit1645c78bb4678e4edc624241e9515c8b
         'MeekroDBEval' => __DIR__ . '/..' . '/sergeytsalkov/meekrodb/db.class.php',
         'MeekroDBException' => __DIR__ . '/..' . '/sergeytsalkov/meekrodb/db.class.php',
         'WhereClause' => __DIR__ . '/..' . '/sergeytsalkov/meekrodb/db.class.php',
+        'lib\\Wechat' => __DIR__ . '/../..' . '/lib/Wechat.php',
+        'lib\\wxAuthException' => __DIR__ . '/../..' . '/lib/Wechat.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

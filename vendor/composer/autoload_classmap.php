@@ -13,4 +13,6 @@ return array(
     'MeekroDBEval' => $vendorDir . '/sergeytsalkov/meekrodb/db.class.php',
     'MeekroDBException' => $vendorDir . '/sergeytsalkov/meekrodb/db.class.php',
     'WhereClause' => $vendorDir . '/sergeytsalkov/meekrodb/db.class.php',
+    'lib\\Wechat' => $baseDir . '/lib/Wechat.php',
+    'lib\\wxAuthException' => $baseDir . '/lib/Wechat.php',
 );
