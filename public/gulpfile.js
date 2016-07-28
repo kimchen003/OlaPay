@@ -41,10 +41,11 @@ function explorer(Path){
                 }else{
                     // 读出所有的文件
                     //console.log('文件名:' + path + '/' + file);
-                    var filePath = "\'"+ Path.replace(/.+\\OlaPay\\/,"") + '/' + file+"\'";
+
+                    var filePath = "\'"+ Path.replace(/.+\\public\\/,"") + '/' + file+"\'";
                     arr.push(filePath);
 
-                    var txt = ( ("var ImageSources = ["+arr.join(",")+"]").replace(/\'\][\'|\;]/ig,"") ) +";";
+                    var txt = ( ("var ImageSources = ["+arr.join(",")+"]").replace(/\]\;/ig,",") ) +";";
 
                     fs.writeFile(path.join(__dirname,"js","nodejs_controls","ImageSources.js"),txt,function (err) {
                          if (err) throw err ;

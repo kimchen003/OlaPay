@@ -837,42 +837,42 @@ body {
 }
 .gameOneBank {
   position: absolute;
-  height: 13.75%;
+  height: 9.75%;
   top: 50%;
   left: 50%;
   display: none;
 }
 .gameOneBankSite01 {
   top: 70%;
-  left: 5%;
+  left: 6%;
 }
 .gameOneBankSite02 {
-  top: 82%;
-  left: 16%;
+  top: 84%;
+  left: 18%;
 }
 .gameOneBankSite03 {
-  top: 82%;
-  left: 26%;
+  top: 84%;
+  left: 28%;
 }
 .gameOneBankSite04 {
-  top: 82%;
-  left: 40%;
+  top: 84%;
+  left: 41%;
 }
 .gameOneBankSite05 {
-  top: 71%;
-  left: 50%;
+  top: 74%;
+  left: 53%;
 }
 .gameOneBankSite06 {
-  top: 57%;
-  left: 33%;
+  top: 59%;
+  left: 35%;
 }
 .gameOneBankSite07 {
-  top: 59%;
-  left: 54%;
+  top: 62%;
+  left: 57%;
 }
 .gameOneBankSite08 {
-  top: 59%;
-  left: 65%;
+  top: 62%;
+  left: 67%;
 }
 .gameOnetag.turnOn {
   -webkit-transform: rotateY(180deg);
@@ -1024,11 +1024,70 @@ body {
   top: 0;
   left: 0;
 }
-.logo_8.on:after,
-.logo_2.on:after,
-.logo_7.on:after {
+#gameTwo .logo_8.on:after,
+#gameTwo .logo_2.on:after,
+#gameTwo .logo_7.on:after {
   top: -10px;
 }
-.logo_4.on:after {
+#gameTwo .logo_4.on:after {
   top: -4px;
+}
+#gameTwo2 .logo_1 {
+  top: 82.6%;
+  left: 9.8%;
+  height: 3.4%;
+}
+#gameTwo2 .logo_2 {
+  top: 42.9%;
+  left: 28.1%;
+  height: 2.1%;
+}
+#gameTwo2 .logo_3 {
+  top: 62.7%;
+  left: 33.4%;
+  height: 6.3%;
+}
+#gameTwo2 .logo_4 {
+  top: 16.9%;
+  left: 34.4%;
+  height: 3.5%;
+}
+#gameTwo2 .logo_5 {
+  top: 61.1%;
+  left: 41.6%;
+  height: 4%;
+}
+#gameTwo2 .logo_6 {
+  top: 51.8%;
+  left: 53.3%;
+  height: 3%;
+}
+#gameTwo2 .logo_7 {
+  top: 12.3%;
+  left: 79.6%;
+  height: 2.4%;
+}
+#gameTwo2 .logo_8 {
+  top: 35%;
+  left: 86.3%;
+  height: 3.8%;
+}
+#gameTwo2 .logo_9 {
+  top: 54%;
+  left: 85.5%;
+  height: 2.4%;
+}
+#gameTwo2 .logo_2.on:after,
+#gameTwo2 .logo_6.on:after,
+#gameTwo2 .logo_7.on:after,
+#gameTwo2 .logo_9.on:after {
+  top: -3px;
+}
+#gameTwo2 .logo_4.on:after {
+  top: -7px;
+  left: 9px;
+}
+#gameTwo2 .logo_3.on:after {
+  top: 3px;
+  left: 9px;
 }
