@@ -808,10 +808,17 @@ body {
   bottom: 5%;
   height: 15%;
 }
+.subSuccess .alertType02Main {
+  height: 212px;
+}
+.subSuccess .alertType02Btn {
+  bottom: 5%;
+  height: 15%;
+}
 .u_name,
 .u_tel {
   position: absolute;
-  top: 118px;
+  top: 125px;
   left: 101px;
   border: none;
   padding: 0;
@@ -820,7 +827,7 @@ body {
   background: none;
 }
 .u_tel {
-  top: 143px;
+  top: 150px;
 }
 .logoAmount {
   position: absolute;

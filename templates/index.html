@@ -293,6 +293,17 @@
             <p class="alertType02Btn absoulteControl" id="subForm"></p>
         </div>
     </div>
+    <div id="subSuccess" class="alertType02 subSuccess fullScreen hide">
+        <div class="alertType02Main absoulteControl">
+            <img src="image/alert/sub_success.png" class="alertType02Bg" alt="">
+            <!-- <form>
+                <input class="u_name" id="useranme" maxlength="50"/>
+                <input class="u_tel" id="phone" value="" maxlength="11" type="tel"/>
+            </form> -->
+            <p style="bottom: 14%;width: 56%;left: 22%;" class="alertType02Btn absoulteControl" id="checkSite"></p>
+            <!-- <p class="alertType02Btn absoulteControl" id="subForm"></p> -->
+        </div>
+    </div>
     <!-- 提交用户信息(end) -->
 
     <!-- 横屏提示(start) -->
@@ -354,7 +365,7 @@
             data.username = $("#useranme").val();
             data.phone = $("#phone").val();
 
-            
+
 
             if (data.phone == '' || data.phone == '') {
                 alert('请填写手机号和姓名');
@@ -371,14 +382,18 @@
                 dataType: "json",
                 success: function(response){
                     if(response.error == 0){
-                        showSiteInfoPage();
+                        $("#subSuccess").show();
                     }else{
                         alert(response.message);
                     }
                 }
             })
 
-        })
+        });
+        $("#checkSite").click(function() {
+            $("#subSuccess").hide();
+            showSiteInfoPage();
+        });
     })
 </script>
 </body>
