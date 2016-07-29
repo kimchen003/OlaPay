@@ -25,14 +25,14 @@ define(function(require, exports, module) {
                     var target = self.elm.find(".gameOnetag").eq(c-1);
                     target.find(".tag_on").attr("src","image/game1/tag_on.png")
                     target.addClass("turnOn turn0"+i);
-
+                    $(".gameOneBankSite0"+c).show().addClass("turnOn turn0"+i);
                 });
 
                 setTimeout(function(){
-                    self.elm.find(".gameOnetag").removeClass("turnOn turn00 turn01 turn02 turn03 turn04 turn05 turn06 turn07 turn08");
+                    self.elm.find(".gameOnetag,.gameOneBank").removeClass("turnOn turn00 turn01 turn02 turn03 turn04 turn05 turn06 turn07 turn08");
 
                     self.elm.trigger("gameOne:chose");
-                }, (self.getRandomArray.length-2)*1000 + 500);
+                }, (self.getRandomArray.length-1)*2000 + 500);
             });
 
             //玩家选择
@@ -45,6 +45,8 @@ define(function(require, exports, module) {
 
                     var nowNum = $(this).index()+1;
                     $(this).addClass("turnOn");
+                    $(".gameOneBankSite0"+nowNum).addClass("turnAuto");
+
                     if(nowNum == self.getRandomArray[nowIndex]){
                         //选对了
                         if(nowIndex<self.getRandomArray.length-1){
@@ -67,18 +69,19 @@ define(function(require, exports, module) {
                         $(".gameOneBankSite0"+nowNum).show();
                     }else{
                         //选错了
-                        //console.log("选错了");
                         _.gameOneChance--;
                         self.elm.find(".gameOnetag").off("singleTap");
 
                         $("#chances").text(_.gameOneChance);
                         $("#tryAgain").removeClass('hide');
-                        $(".gameOneBank").hide();
+
+                        $(".gameOneBank").removeClass("turnAuto").hide();
 
                         $("#tryAgain").on("singleTap",function(e){
                             $("#tryAgain").addClass('hide');
                             //重新开始
                             if(_.gameOneChance>0){
+
                                 self.elm.trigger("gameOne:start");
 
 
@@ -96,6 +99,16 @@ define(function(require, exports, module) {
 
             this._super();
         },
+        resize : function(){
+            var nowWrap = $(".gameOne.hasLoad");
+            if(nowWrap.length>0){
+                if(nowWrap.find(".gameOneBg").width()>0){
+                    window.gameOneBgWidth = nowWrap.find(".gameOneBg").width();    
+                    nowWrap.find(".gameOneTips_on,.gameOneMain").width(gameOneBgWidth || 0);
+                }
+            
+            }
+        },
         render : function(){
             $("#gameOneTips").removeClass("hide");
 
@@ -106,7 +119,7 @@ define(function(require, exports, module) {
 
             $("#gameOneTips .alertType01Btn").one("tap",function(){
                 $("#gameOneTips").addClass("hide");
-
+                self.resize();
                 self.elm.trigger("gameOne:start");
             });
         },

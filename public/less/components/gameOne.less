@@ -21,10 +21,19 @@
     width: 100%;
     height: 100%;
 }
+.gameOneFixed {
+    position: absolute;
+    width: 1000%;
+    height: 100%;
+    top: 0;
+    left: 99%;
+    background: url(../image/game1/fixed.png) repeat-x left center;
+    background-size: auto 100%;
+}
 //tag位置
 .gameOnetag {
     .transform-style( preserve-3d);
-    .transition( transform 0.5s);
+    .transition( transform 0.7s);
 }
 .gameOnetag {
     position: absolute;
@@ -87,7 +96,6 @@
     height: 9.75%;
     top: 50%;
     left: 50%;
-    display: none;
 }
 .gameOneBankSite01 {
     top: 70%;
@@ -126,32 +134,78 @@
 .gameOnetag.turnOn {
     .transform(rotateY( 180deg ));
 }
-
 .turn00 {
-    .transition-delay(.5s);
-}
-.turn01 {
     .transition-delay(1s);
 }
-.turn02 {
-    .transition-delay(1.5s);
-}
-.turn03 {
+.turn01 {
     .transition-delay(2s);
 }
-.turn04 {
-    .transition-delay(2.5s);
-}
-.turn05 {
+.turn02 {
     .transition-delay(3s);
 }
-.turn06 {
-    .transition-delay(3.5s);
-}
-.turn07 {
+.turn03 {
     .transition-delay(4s);
 }
-.turn08 {
-    .transition-delay(4.5s);
+.turn04 {
+    .transition-delay(5s);
 }
+.turn05 {
+    .transition-delay(6s);
+}
+.turn06 {
+    .transition-delay(7s);
+}
+.turn07 {
+    .transition-delay(8s);
+}
+.turn08 {
+    .transition-delay(9s);
+}
+
+
+.gameOneBank {
+    display: none;
+    opacity: 0;
+}
+.turnAuto {
+    display: block;
+    opacity: 1;
+}
+.gameOneBank.turnOn.turn00{
+    display: block;
+    .fadeIn();
+    .animation(fadeIn 0.1s 1.6s ease-in-out);
+    .animation-fill-mode(forwards);
+}
+.gameOneBank.turnOn.turn01{
+    display: block;
+    .fadeIn();
+    .animation(fadeIn 0.1s 2.6s ease-in-out);
+    .animation-fill-mode(forwards);
+}
+.gameOneBank.turnOn.turn02{
+    display: block;
+    .fadeIn();
+    .animation(fadeIn 0.1s 3.6s ease-in-out);
+    .animation-fill-mode(forwards);
+}
+.gameOneBank.turnOn.turn03{
+    display: block;
+    .fadeIn();
+    .animation(fadeIn 0.1s 4.6s ease-in-out);
+    .animation-fill-mode(forwards);
+}
+.gameOneBank.turnOn.turn04{
+    display: block;
+    .fadeIn();
+    .animation(fadeIn 0.1s 5.6s ease-in-out);
+    .animation-fill-mode(forwards);
+}
+.gameOneBank.turnOn.turn05{
+    display: block;
+    .fadeIn();
+    .animation(fadeIn 0.1s 6.6s ease-in-out);
+    .animation-fill-mode(forwards);
+}
+
 

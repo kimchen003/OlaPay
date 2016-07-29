@@ -179,6 +179,7 @@ select {
 */
 body {
   font-family: "微软雅黑";
+  overflow: hidden;
 }
 .hide {
   display: none;
@@ -508,6 +509,82 @@ body {
   font-family: 'iconfont';
 }
 /*
+*  @desc 音乐开关
+*/
+#audio_btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 200;
+  width: 30px;
+  height: 30px;
+}
+#audio_btn {
+  display: none;
+}
+.off {
+  background-image: url(../svg/normalmusic.svg);
+  background-size: 100% auto;
+}
+#audio_btn,
+.off {
+  background-repeat: no-repeat;
+}
+.rotate {
+  -webkit-animation: rotate 1s linear;
+  -moz-animation: rotate 1s linear;
+  -ms-animation: rotate 1s linear;
+  animation: rotate 1s linear;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate {
+  0% {
+    -moz-transform: rotate(0);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate {
+  0% {
+    -o-transform: rotate(0);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotate {
+  0% {
+    -ms-transform: rotate(0);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*
 *  @desc 引导页(模块)
 */
 .guideBlueArea {
@@ -583,8 +660,12 @@ body {
 }
 .slideGrass {
   height: 62%;
-  width: 100%;
   bottom: 2%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
 .slideGrassBg {
   height: 100%;
@@ -596,10 +677,20 @@ body {
   -ms-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
 }
+.trainActive {
+  -webkit-transform: translate(-10%, 0%);
+  -moz-transform: translate(-10%, 0%);
+  -ms-transform: translate(-10%, 0%);
+  transform: translate(-10%, 0%);
+}
 .slideStartBox {
   bottom: 20%;
   height: 14%;
-  left: -10%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
 .slideTrain {
   opacity: 0.3;
@@ -767,15 +858,24 @@ body {
   width: 100%;
   height: 100%;
 }
+.gameOneFixed {
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  top: 0;
+  left: 99%;
+  background: url(../image/game1/fixed.png) repeat-x left center;
+  background-size: auto 100%;
+}
 .gameOnetag {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: transform 0.5s;
-  -moz-transition: transform 0.5s;
-  -ms-transition: transform 0.5s;
-  transition: transform 0.5s;
+  -webkit-transition: transform 0.7s;
+  -moz-transition: transform 0.7s;
+  -ms-transition: transform 0.7s;
+  transition: transform 0.7s;
 }
 .gameOnetag {
   position: absolute;
@@ -840,7 +940,6 @@ body {
   height: 9.75%;
   top: 50%;
   left: 50%;
-  display: none;
 }
 .gameOneBankSite01 {
   top: 70%;
@@ -881,58 +980,492 @@ body {
   transform: rotateY(180deg);
 }
 .turn00 {
-  -webkit-transition-delay: 0.5s;
-  -moz-transition-delay: 0.5s;
-  -ms-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-}
-.turn01 {
   -webkit-transition-delay: 1s;
   -moz-transition-delay: 1s;
   -ms-transition-delay: 1s;
   transition-delay: 1s;
 }
-.turn02 {
-  -webkit-transition-delay: 1.5s;
-  -moz-transition-delay: 1.5s;
-  -ms-transition-delay: 1.5s;
-  transition-delay: 1.5s;
-}
-.turn03 {
+.turn01 {
   -webkit-transition-delay: 2s;
   -moz-transition-delay: 2s;
   -ms-transition-delay: 2s;
   transition-delay: 2s;
 }
-.turn04 {
-  -webkit-transition-delay: 2.5s;
-  -moz-transition-delay: 2.5s;
-  -ms-transition-delay: 2.5s;
-  transition-delay: 2.5s;
-}
-.turn05 {
+.turn02 {
   -webkit-transition-delay: 3s;
   -moz-transition-delay: 3s;
   -ms-transition-delay: 3s;
   transition-delay: 3s;
 }
-.turn06 {
-  -webkit-transition-delay: 3.5s;
-  -moz-transition-delay: 3.5s;
-  -ms-transition-delay: 3.5s;
-  transition-delay: 3.5s;
-}
-.turn07 {
+.turn03 {
   -webkit-transition-delay: 4s;
   -moz-transition-delay: 4s;
   -ms-transition-delay: 4s;
   transition-delay: 4s;
 }
+.turn04 {
+  -webkit-transition-delay: 5s;
+  -moz-transition-delay: 5s;
+  -ms-transition-delay: 5s;
+  transition-delay: 5s;
+}
+.turn05 {
+  -webkit-transition-delay: 6s;
+  -moz-transition-delay: 6s;
+  -ms-transition-delay: 6s;
+  transition-delay: 6s;
+}
+.turn06 {
+  -webkit-transition-delay: 7s;
+  -moz-transition-delay: 7s;
+  -ms-transition-delay: 7s;
+  transition-delay: 7s;
+}
+.turn07 {
+  -webkit-transition-delay: 8s;
+  -moz-transition-delay: 8s;
+  -ms-transition-delay: 8s;
+  transition-delay: 8s;
+}
 .turn08 {
-  -webkit-transition-delay: 4.5s;
-  -moz-transition-delay: 4.5s;
-  -ms-transition-delay: 4.5s;
-  transition-delay: 4.5s;
+  -webkit-transition-delay: 9s;
+  -moz-transition-delay: 9s;
+  -ms-transition-delay: 9s;
+  transition-delay: 9s;
+}
+.gameOneBank {
+  display: none;
+  opacity: 0;
+}
+.turnAuto {
+  display: block;
+  opacity: 1;
+}
+.gameOneBank.turnOn.turn00 {
+  display: block;
+  -webkit-animation: fadeIn 0.1s 1.6s ease-in-out;
+  -moz-animation: fadeIn 0.1s 1.6s ease-in-out;
+  -ms-animation: fadeIn 0.1s 1.6s ease-in-out;
+  animation: fadeIn 0.1s 1.6s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: none;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-transform: none;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -o-transform: none;
+  }
+}
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transform: none;
+  }
+}
+.gameOneBank.turnOn.turn01 {
+  display: block;
+  -webkit-animation: fadeIn 0.1s 2.6s ease-in-out;
+  -moz-animation: fadeIn 0.1s 2.6s ease-in-out;
+  -ms-animation: fadeIn 0.1s 2.6s ease-in-out;
+  animation: fadeIn 0.1s 2.6s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: none;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-transform: none;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -o-transform: none;
+  }
+}
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transform: none;
+  }
+}
+.gameOneBank.turnOn.turn02 {
+  display: block;
+  -webkit-animation: fadeIn 0.1s 3.6s ease-in-out;
+  -moz-animation: fadeIn 0.1s 3.6s ease-in-out;
+  -ms-animation: fadeIn 0.1s 3.6s ease-in-out;
+  animation: fadeIn 0.1s 3.6s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: none;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-transform: none;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -o-transform: none;
+  }
+}
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transform: none;
+  }
+}
+.gameOneBank.turnOn.turn03 {
+  display: block;
+  -webkit-animation: fadeIn 0.1s 4.6s ease-in-out;
+  -moz-animation: fadeIn 0.1s 4.6s ease-in-out;
+  -ms-animation: fadeIn 0.1s 4.6s ease-in-out;
+  animation: fadeIn 0.1s 4.6s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: none;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-transform: none;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -o-transform: none;
+  }
+}
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transform: none;
+  }
+}
+.gameOneBank.turnOn.turn04 {
+  display: block;
+  -webkit-animation: fadeIn 0.1s 5.6s ease-in-out;
+  -moz-animation: fadeIn 0.1s 5.6s ease-in-out;
+  -ms-animation: fadeIn 0.1s 5.6s ease-in-out;
+  animation: fadeIn 0.1s 5.6s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: none;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-transform: none;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -o-transform: none;
+  }
+}
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transform: none;
+  }
+}
+.gameOneBank.turnOn.turn05 {
+  display: block;
+  -webkit-animation: fadeIn 0.1s 6.6s ease-in-out;
+  -moz-animation: fadeIn 0.1s 6.6s ease-in-out;
+  -ms-animation: fadeIn 0.1s 6.6s ease-in-out;
+  animation: fadeIn 0.1s 6.6s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: none;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-transform: none;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -o-transform: none;
+  }
+}
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transform: none;
+  }
 }
 /*
 *  @desc 游戏二(模块)
@@ -1031,6 +1564,15 @@ body {
 }
 #gameTwo .logo_4.on:after {
   top: -4px;
+}
+.gameTwoFixed {
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  top: 0;
+  right: 99%;
+  background: url(../image/game2/2/fixed.png) repeat-x right center;
+  background-size: auto 100%;
 }
 #gameTwo2 .logo_1 {
   top: 82.6%;

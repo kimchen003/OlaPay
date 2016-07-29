@@ -83,6 +83,12 @@ define(function(require, exports, module) {
 
             this._super();
         },
+        resize : function(){
+            var nowWrap = $(".gameTwo.hasLoad");
+            if(nowWrap.length>0){
+                nowWrap.find(".gameTwoLogoWrap,.gameTwoMain").width(nowWrap.find(".gameTwoBg").width())
+            }
+        },
         render : function(){
             $("#logoAmount").text(_.gameTwoLogo);
             $("#gameTwoTips").removeClass("hide");

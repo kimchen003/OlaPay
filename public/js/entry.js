@@ -10,6 +10,7 @@ define(function(require, exports, module) {
     require("./nodejs_controls/ImageSources");
     const LoadingMask = require("./modules/LoadingMask");
     const ScreenControler = require("./modules/ScreenControler");
+    const SoundControler = require("./modules/SoundControler");
     const StageGuide = require("./modules/StageGuide");
     const StageSlideStart = require("./modules/StageSlideStart");
     const StageGameOne = require("./modules/StageGameOne");
@@ -22,8 +23,9 @@ define(function(require, exports, module) {
         //容器DOM
         this.elm = $(".mainWrap");
 
-        //屏幕控制器实例化
+        //控制器实例化
         this.screenControler = new ScreenControler();
+        this.soundControler = new SoundControler();
 
         //场景实例化
         this.stageGuide = new StageGuide();
@@ -85,18 +87,37 @@ define(function(require, exports, module) {
 
                 //游戏二有两个场景随机出现
                 var nowStage = ["#gameTwo","#gameTwo2"][Random.num(0,1)];
-
+                nowStage = "#gameTwo2";
                 self.stageGameTwo.initialize(nowStage,function(){
                     //console.log("游戏二结束");
                 });
             });
 
-            //预加载图片
-            var loading = new LoadingMask('.loading', ImageSources, function(){
-                //console.log("加载完毕");
+            //加载音频
+            self.soundControler.loadingSource(function(){
+                //预加载图片
+                var loading = new LoadingMask('.loading', ImageSources, function(){
+                        self.render();
+                    })
 
-                self.render();
             });
+
+            //站点信息图
+            window.showSiteInfoPage = function(){
+                _.pageNeedDir = 2;
+                self.screenControler.handleScreenTips();
+
+                $("#userInfo,.gameTwo").hide();
+
+                $(".gameOnetag").addClass('turnOn');
+                $(".gameOnetag").find(".tag_on").attr("src","image/game1/tag_on.png");
+                $(".gameOneBank").addClass('turnAuto').show();
+
+                $("#gameOne").show();
+            }
+
+            //showSiteInfoPage();
+
         },
         render : function(){
             //注意：这里可以跳过流程,直接去到相应的关卡
@@ -108,6 +129,24 @@ define(function(require, exports, module) {
 
             //解决点透问题
             FastClick.attach(document.body);
+
+            this.eventBinding();
+        },
+        eventBinding : function(){
+            var self = this;
+
+            //音乐控制按钮
+            $("#audio_btn").on("click",function(){
+                if($(this).hasClass("rotate")){
+                    //关闭音乐
+                    $(this).removeClass('rotate');
+                    self.soundControler.stopBgm();
+                }else{
+                    //开启音乐
+                    $(this).addClass('rotate');
+                    self.soundControler.playBgm();
+                }
+            });
         }
     };
 
