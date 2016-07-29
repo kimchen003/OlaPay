@@ -354,24 +354,29 @@
             data.username = $("#useranme").val();
             data.phone = $("#phone").val();
 
-            //站点信息图
-            showSiteInfoPage();
+            
 
-            // if (data.phone == '' || data.phone == '') {
-            //     alert('请填写手机号和姓名');
-            //     return false;
-            // }
-            // if (!Utils.isMobile(data.phone)) {
-            //     alert('请填写正确的手机号！');
-            //     return false;
-            // }
-            // $.post("/todo", data, function (response) {
-            //     if (response == 0) {
-            //         alert('OK');
-            //     } else {
-            //         alert(response.message);
-            //     }
-            // })
+            if (data.phone == '' || data.phone == '') {
+                alert('请填写手机号和姓名');
+                 return false;
+            }
+            if (!Utils.isMobile(data.phone)) {
+                 alert('请填写正确的手机号！');
+                 return false;
+            }
+            $.ajax({
+                type: "post",
+                url: "/todo",
+                data: data,
+                dataType: "json",
+                success: function(response){
+                    if(response.error == 0){
+                        showSiteInfoPage();
+                    }else{
+                        alert(response.message);
+                    }
+                }
+            })
 
         })
     })

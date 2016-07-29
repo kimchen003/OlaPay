@@ -87,7 +87,7 @@ define(function(require, exports, module) {
 
                 //游戏二有两个场景随机出现
                 var nowStage = ["#gameTwo","#gameTwo2"][Random.num(0,1)];
-                nowStage = "#gameTwo2";
+                //nowStage = "#gameTwo2";
                 self.stageGameTwo.initialize(nowStage,function(){
                     //console.log("游戏二结束");
                 });

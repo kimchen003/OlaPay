@@ -30,13 +30,17 @@ $app->post('/todo', function () use ($app) {
         $result['message'] = '该手机已经存在~';
     }
     if ($result['error']) {
-        echo json_result($result);
+        echo json_encode($result);
         exit;
     }
-    $addStatus = DB::insert('userinfo', array('phone' => $phone, 'username' => $username, 'regdate' => time()));
+    $user_IP = $_SERVER["REMOTE_ADDR"];
+    $addStatus = DB::insert(
+        'userinfo', 
+        array('phone' => $phone, 'username' => $username, 'regdate' => time(), 'ip'=>$user_IP)
+    );
     if ($addStatus) {
         $result['message'] = 'ok';
-        echo json_result($result);
+        echo json_encode($result);
         exit;
     }
 });
