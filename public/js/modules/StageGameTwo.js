@@ -29,6 +29,7 @@ define(function(require, exports, module) {
                 if(self.elm.startHasRun)return;
                 self.elm.startHasRun = true;
                 self.getRandomArray = Random.array(_.gameTwoLogo,gameRandArr);
+                console.log(self.getRandomArray);
                 $.each(self.getRandomArray,function(i,c){
                     var target = self.elm.find(".gameTwoLogo").eq(c-1).addClass("canSelected");
                     target.show();

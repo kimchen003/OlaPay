@@ -25,10 +25,11 @@ define(function(require, exports, module) {
 
         //控制器实例化
         this.screenControler = new ScreenControler();
-        this.soundControler = new SoundControler();
+
 
         //场景实例化
         this.stageGuide = new StageGuide();
+        this.soundControler = new SoundControler();
         this.stageSlideStart = new StageSlideStart();
         this.stageGameOne = new StageGameOne();
         this.stageGameTwo = new StageGameTwo();

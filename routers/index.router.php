@@ -2,7 +2,7 @@
 
 // GET index route
 $app->get('/', function () use ($app) {
-    $app->render('index.html');
+    $app->render('index.html', array('version'=>time()));
 });
 $app->post('/todo', function () use ($app) {
 
@@ -35,7 +35,7 @@ $app->post('/todo', function () use ($app) {
     }
     $user_IP = $_SERVER["REMOTE_ADDR"];
     $addStatus = DB::insert(
-        'userinfo', 
+        'userinfo',
         array('phone' => $phone, 'username' => $username, 'regdate' => time(), 'ip'=>$user_IP)
     );
     if ($addStatus) {
