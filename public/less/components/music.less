@@ -1,0 +1,36 @@
+/*
+*  @desc 音乐开关
+*/
+#audio_btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 200;
+    width: 30px;
+    height: 30px;
+}
+#audio_btn {
+    display: none;
+}
+.off {
+    background-image: url(../svg/normalmusic.svg);
+    background-size: 100% auto;
+}
+#audio_btn, .off {
+    background-repeat: no-repeat;
+}
+.rotate {
+    .animation(rotate 1s linear);
+    .keyframes(rotate);
+    .animation-fill-mode(forwards);
+    .animation-iteration-count(infinite);
+    .-frames(@-...){
+        0% {
+            @{-}transform: rotate(0);
+        }
+
+        100% {
+            @{-}transform: rotate(360deg);
+        }
+    }
+}

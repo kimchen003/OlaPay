@@ -15,7 +15,15 @@ define(function(require, exports, module) {
             this.endCallBack = endCallBack;
             this.stageName = "滑动开始页";
 
+            this.resize();
             this._super();
+        },
+        resize : function(){
+            var nowWrap = $(".slideStartPage.hasLoad");
+            if(nowWrap.length>0){
+                nowWrap.find(".slideGrass").width(nowWrap.find(".slideGrassBg").width());
+                $(".slideStartBox").width($(window).width())
+            }
         },
         eventBinding : function(){
             var self = this;

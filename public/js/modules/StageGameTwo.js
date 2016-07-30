@@ -17,11 +17,19 @@ define(function(require, exports, module) {
             this.endCallBack = endCallBack;
             this.stageName = "游戏二";
 
+            //移除不用的
+            if(el == '#gameTwo'){
+                var gameRandArr = [1,2,4,5,7,8,9];
+            }else{
+                var gameRandArr = [1,2,3,4,6,7,8,9];
+            }
+
             //游戏开始
             this.elm.on("gameTwo:start",function(){
                 if(self.elm.startHasRun)return;
                 self.elm.startHasRun = true;
-                self.getRandomArray = Random.array(_.gameTwoLogo,[1,2,3,4,5,6,7,8,9]);
+                self.getRandomArray = Random.array(_.gameTwoLogo,gameRandArr);
+                console.log(self.getRandomArray);
                 $.each(self.getRandomArray,function(i,c){
                     var target = self.elm.find(".gameTwoLogo").eq(c-1).addClass("canSelected");
                     target.show();
@@ -82,6 +90,12 @@ define(function(require, exports, module) {
             });
 
             this._super();
+        },
+        resize : function(){
+            var nowWrap = $(".gameTwo.hasLoad");
+            if(nowWrap.length>0){
+                nowWrap.find(".gameTwoLogoWrap,.gameTwoMain").width(nowWrap.find(".gameTwoBg").width())
+            }
         },
         render : function(){
             $("#logoAmount").text(_.gameTwoLogo);

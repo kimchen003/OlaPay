@@ -1,6 +1,17 @@
 define(function(require, exports, module) {
 
     /*
+    * @desc 引用模块
+    */
+    const StageGameOne = require("./StageGameOne");
+    const StageGameTwo = require("./StageGameTwo");
+    const StageSlideStart = require("./StageSlideStart");
+
+    const stageGameOne = new StageGameOne();
+    const stageGameTwo = new StageGameTwo();
+    const stageSlideStart = new StageSlideStart();
+
+    /*
     * @desc 屏幕操作类
     */
     const ScreenControler = function(){
@@ -24,6 +35,10 @@ define(function(require, exports, module) {
         var height = $(window).height();
 
         var nowPageDir = parseFloat(width)<parseFloat(height)?1:2;
+
+        stageGameOne.resize();
+        stageGameTwo.resize();
+        stageSlideStart.resize();
 
         if(nowPageDir != _.pageNeedDir){
             switch(_.pageNeedDir){

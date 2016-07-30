@@ -5,8 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>南昌出行·趣作战</title>
-    <link rel="stylesheet" href="css/base.css">
-    <script src="js/libs/sea.js"></script>
+    <link rel="stylesheet" href="css/base.css?v={{ version }}">
+    <script src="js/libs/sea.js?v={{ version }}"></script>
 </head>
 <body>
 <div class="mainWrap">
@@ -116,7 +116,7 @@
                     <img class="tag_off" src="image/game1/tag_off.png" alt="">
                 </div>
             </div>
-
+            <div class="gameOneFixed"></div>
         </div>
     </div>
     <!-- 游戏1(end) -->
@@ -157,6 +157,8 @@
                         <img src="image/game2/1/logo_9.png" alt="">
                     </div>
                 </div>
+
+                <div class="gameOneFixed"></div>
             </div>
         </div>
         <!-- 场景2-1(结束) -->
@@ -195,6 +197,8 @@
                         <img src="image/game2/2/logo_9.png" alt="">
                     </div>
                 </div>
+
+                <div class="gameTwoFixed"></div>
             </div>
         </div>
         <!-- 场景2-2(结束) -->
@@ -289,6 +293,17 @@
             <p class="alertType02Btn absoulteControl" id="subForm"></p>
         </div>
     </div>
+    <div id="subSuccess" class="alertType02 subSuccess fullScreen hide">
+        <div class="alertType02Main absoulteControl">
+            <img src="image/alert/sub_success.png" class="alertType02Bg" alt="">
+            <!-- <form>
+                <input class="u_name" id="useranme" maxlength="50"/>
+                <input class="u_tel" id="phone" value="" maxlength="11" type="tel"/>
+            </form> -->
+            <p style="bottom: 14%;width: 56%;left: 22%;" class="alertType02Btn absoulteControl" id="checkSite"></p>
+            <!-- <p class="alertType02Btn absoulteControl" id="subForm"></p> -->
+        </div>
+    </div>
     <!-- 提交用户信息(end) -->
 
     <!-- 横屏提示(start) -->
@@ -297,7 +312,7 @@
             <p class="crossScreenPhone">
                 <span class="tipsIphone">&#xe601;</span>
             </p>
-            <p>来换个姿势吧!<br>（请确认手机开启屏幕旋转）</p>
+            <p style="line-height:1.2;">来换个姿势吧!<br>（请确认手机开启屏幕旋转）</p>
         </div>
     </div>
     <!-- 横屏提示(end) -->
@@ -308,12 +323,16 @@
             <p class="verticalScreenPhone">
                 <span class="tipsIphone">&#xe601;</span>
             </p>
-            <p>来换个姿势吧!<br>（请确认手机开启屏幕旋转）</p>
+            <p style="line-height:1.2;">来换个姿势吧!<br>（请确认手机开启屏幕旋转）</p>
         </div>
     </div>
     <!-- 竖屏提示(end) -->
 
     <!-- 弹框 (end) -->
+
+    <!-- 音乐按钮(start) -->
+    <div id="audio_btn" class="off rotate" style="display: none;"></div>
+    <!-- 音乐按钮(end) -->
 </div>
 
 <script>
@@ -321,7 +340,9 @@
         base: "./js/libs",
         alias: {
             "zepto": "zepto.min",
-            "touch": "touch-0.2.14.min"
+            "touch": "touch-0.2.14.min",
+            "preloadjs": "preloadjs-0.6.2.min",
+            "soundjs": "soundjs-0.6.2.min"
         }
     });
 
@@ -337,27 +358,42 @@
             return reg.test(tel);
         }
 
+
+
         $("#subForm").click(function () {
             var data = {m: Math.random()};
             data.username = $("#useranme").val();
             data.phone = $("#phone").val();
+
+
+
             if (data.phone == '' || data.phone == '') {
                 alert('请填写手机号和姓名');
-                return false;
+                 return false;
             }
             if (!Utils.isMobile(data.phone)) {
-                alert('请填写正确的手机号！');
-                return false;
+                 alert('请填写正确的手机号！');
+                 return false;
             }
-            $.post("/todo", data, function (response) {
-                if (response == 0) {
-                    alert('OK');
-                } else {
-                    alert(response.message);
+            $.ajax({
+                type: "post",
+                url: "/todo",
+                data: data,
+                dataType: "json",
+                success: function(response){
+                    if(response.error == 0){
+                        $("#subSuccess").show();
+                    }else{
+                        alert(response.message);
+                    }
                 }
             })
 
-        })
+        });
+        $("#checkSite").click(function() {
+            $("#subSuccess").hide();
+            showSiteInfoPage();
+        });
     })
 </script>
 </body>
