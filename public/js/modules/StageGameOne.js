@@ -58,7 +58,7 @@ define(function(require, exports, module) {
 
                             setTimeout(function(){
                                 $("#gameOneSucc").removeClass('hide');
-                                $("#gameOneSucc .alertType02Btn").on("tap",function(){
+                                $("#gameOneSucc .alertType02Btn").on("click",function(){
                                     self.nextStage(self);
                                     $("#gameOneSucc").addClass('hide');
                                 })
@@ -103,10 +103,10 @@ define(function(require, exports, module) {
             var nowWrap = $(".gameOne.hasLoad");
             if(nowWrap.length>0){
                 if(nowWrap.find(".gameOneBg").width()>0){
-                    window.gameOneBgWidth = nowWrap.find(".gameOneBg").width();    
+                    window.gameOneBgWidth = nowWrap.find(".gameOneBg").width();
                     nowWrap.find(".gameOneTips_on,.gameOneMain").width(gameOneBgWidth || 0);
                 }
-            
+
             }
         },
         render : function(){
@@ -117,7 +117,7 @@ define(function(require, exports, module) {
         eventBinding : function(){
             var self = this;
 
-            $("#gameOneTips .alertType01Btn").one("tap",function(){
+            $("#gameOneTips .alertType01Btn").one("click",function(){
                 $("#gameOneTips").addClass("hide");
                 self.resize();
                 self.elm.trigger("gameOne:start");
