@@ -106,16 +106,10 @@ define(function(require, exports, module) {
         eventBinding : function(){
             var self = this;
 
-            var hasrun = false;
             $("#gameTwoTips .alertType01Btn").one("singleTap",function(){
-                if(!hasrun){
-                    $("#gameTwoTips").addClass("hide");
-                    self.elm.removeClass("hide")
-                    self.elm.trigger("gameTwo:start");
+                $("#gameTwoTips").addClass("hide");
 
-                    hasrun = true;
-                };
-
+                self.elm.trigger("gameTwo:start");
             });
         },
     });
